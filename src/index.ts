@@ -1302,9 +1302,9 @@ const html: string = `
     <link rel="icon" type="image/png" href="https://cdn.letshost.dpdns.org/image/upload/v1751581420/__cdn/685f0e4b7d1b59a6be2a63db/img/ldyoFzE4kF/101/kjfsymvet1lvkuuyrya5.png" />
     <link rel="shortcut icon" href="https://cdn.letshost.dpdns.org/image/upload/v1751581420/__cdn/685f0e4b7d1b59a6be2a63db/img/ldyoFzE4kF/101/kjfsymvet1lvkuuyrya5.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auto-Generated API Documentation-doc-it</title>
-     <link rel="stylesheet" crossorigin href="https://cdn.letshost.dpdns.org/685f0e4b7d1b59a6be2a63db/css/RGdN_kKAu3/102/index-DLR5SXhN.css"/>
-    <script type="module" crossorigin src="https://cdn.letshost.dpdns.org/685f0e4b7d1b59a6be2a63db/js/-fhDzkflS0/102/index-BO_ZVzP7.js"></script>
+    <title>Auto-Generated API Documentation-doc-it-up</title>
+     <link rel="stylesheet" crossorigin href="https://cdn.letshost.dpdns.org/685f0e4b7d1b59a6be2a63db/css/RGdN_kKAu3/104/index-DLR5SXhN.css"/>
+    <script type="module" crossorigin src="https://cdn.letshost.dpdns.org/685f0e4b7d1b59a6be2a63db/js/-fhDzkflS0/103/index-eEW-mwy-.js"></script>
    
     
   </head>

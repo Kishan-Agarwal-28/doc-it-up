@@ -1,5 +1,5 @@
 {
-  "name": "doc-it",
+  "name": "doc-it-up",
   "version": "1.0.0",
   "description": "Generates automatic documentation for your code. So you don't have to.",
   "main": "./dist/index.js",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kishan-Agarwal-28/doc-it"
+    "url": "https://github.com/Kishan-Agarwal-28/doc-it-up"
   },
   "bugs": {
     "url": "https://github.com/Kishan-Agarwal-28/issues"
   },
-  "homepage": "https://github.com/Kishan-Agarwal-28/doc-it",
+  "homepage": "https://github.com/Kishan-Agarwal-28/doc-it-up",
   
   "keywords": [
     "api-documentation", "swagger-generator", "openapi-generator", 

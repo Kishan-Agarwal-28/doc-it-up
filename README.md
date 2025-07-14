@@ -1,10 +1,10 @@
 <div style="display: flex; align-items: center; justify-content: center;">
   <img src="./picsvg_download.svg" width="200" height="200" style="margin-right: 16px;" />
-  <h1 style="text-wrap:balance">doc-it - The Game-Changing API Documentation Generator</h1>
+  <h1 style="text-wrap:balance">doc-it-up - The Game-Changing API Documentation Generator</h1>
 </div>
 
-[![npm version](https://badge.fury.io/js/doc-it.svg)](https://badge.fury.io/js/doc-it)
-[![Downloads](https://img.shields.io/npm/dm/doc-it.svg)](https://www.npmjs.com/package/doc-it)
+[![npm version](https://badge.fury.io/js/doc-it-up.svg)](https://badge.fury.io/js/doc-it-up)
+[![Downloads](https://img.shields.io/npm/dm/doc-it-up.svg)](https://www.npmjs.com/package/doc-it-up)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **Stop writing documentation. Start building APIs.**
@@ -61,7 +61,7 @@ app.post('/users', (req, res) => {
 });
 ```
 
-### ✅ **After doc-it**
+### ✅ **After doc-it-up**
 ```javascript
 app.post('/users', (req, res) => {
   // Your code here
@@ -74,7 +74,7 @@ app.post('/users', (req, res) => {
 ---
 ## ✨ The Solution That Changes Everything
 
-**doc-it** is not just another documentation tool. It's the **revolutionary middleware** that:
+**doc-it-up** is not just another documentation tool. It's the **revolutionary middleware** that:
 
 ### 🧠 **Learns Your API as You Build It**
 - **Zero configuration** - Just plug and play
@@ -135,13 +135,13 @@ app.use("/docs/swagger.json",docsHandler());
 
 ### Installation
 ```bash
-npm install doc-it
+npm install doc-it-up
 ```
 
 ### Basic Setup
 ```javascript
 import express from 'express';
-import { autoDocMiddleware, docsHandler } from 'doc-it';
+import { autoDocMiddleware, docsHandler } from 'doc-it-up';
 
 const app = express();
 
@@ -185,7 +185,7 @@ app.use(autoDocMiddleware({
 ```javascript
 // First request: { "name": "John" }
 // Second request: { "name": "John", "age": 30 }
-// doc-it automatically merges schemas intelligently
+// doc-it-up automatically merges schemas intelligently
 ```
 ---
 ### 🔄 **Real-time Updates**
@@ -238,7 +238,7 @@ app.post('/products', upload.single('image'), (req, res) => {
 ## 🔧 TypeScript Support
 
 ```typescript
-import { autoDocMiddleware, ExtendableRequest, ExtendableResponse } from 'doc-it';
+import { autoDocMiddleware, ExtendableRequest, ExtendableResponse } from 'doc-it-up';
 
 interface CustomRequest extends ExtendableRequest {
   user?: User;
@@ -271,7 +271,7 @@ MIT License - feel free to use this in your commercial projects!
 ## 🚀 Get Started Now
 
 ```bash
-npm install doc-it
+npm install doc-it-up
 ```
 
 **Join thousands of developers who've already made the switch to effortless API documentation!**
@@ -290,4 +290,4 @@ npm install doc-it
 
 
 
-*🚀 Ready to revolutionize your API development? Install doc-it now and never write API documentation again!*
+*🚀 Ready to revolutionize your API development? Install doc-it-up now and never write API documentation again!*
