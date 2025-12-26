@@ -1,11 +1,12 @@
 import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs'; 
 import { defineConfig } from 'rollup';
 
 export default defineConfig({
-  // 1. Specify all your entry points here
   input: {
-    index: 'src/index.ts',            // Backward compatibility
-    core: 'src/core.ts',              // The logic brain
+    index: 'src/index.ts',
+    core: 'src/core.ts',
     'adapters/express': 'src/adapters/express.ts',
     'adapters/fastify': 'src/adapters/fastify.ts',
     'adapters/koa': 'src/adapters/koa.ts',
@@ -14,18 +15,18 @@ export default defineConfig({
     'adapters/hapi': 'src/adapters/hapi.ts'
   },
   output: {
-    dir: 'dist',                      // Output to directory, not single file
-    format: 'esm',                    // ES Modules
-    entryFileNames: '[name].js',      // Keep original names (e.g. adapters/express.js)
-    chunkFileNames: 'chunks/[name]-[hash].js' // Shared code goes here
+    dir: 'dist',
+    format: 'esm',
+    entryFileNames: '[name].js',
+    chunkFileNames: 'chunks/[name]-[hash].js',
+    // 3. Fix: Help Rollup handle default exports from CJS modules
+    interop: 'auto' 
   },
-  // 2. Mark Node built-ins and Frameworks as external
   external: [
     'fs/promises',
     'path',
     'stream',
     'http',
-    // Frameworks (so we don't bundle the whole framework into your adapter)
     'express',
     'fastify',
     'koa',
@@ -34,10 +35,12 @@ export default defineConfig({
     '@hapi/hapi'
   ],
   plugins: [
+    resolve(),  
+    commonjs(), 
     typescript({
-      declaration: true,              // Auto-generate .d.ts files
-      declarationDir: 'dist',         // Put them in dist/
-      rootDir: 'src'                  // Help TS understand source structure
+      declaration: true,
+      declarationDir: 'dist',
+      rootDir: 'src'
     })
   ]
 });

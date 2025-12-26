@@ -1,7 +1,8 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
 import { DocItUpCore, initDocsDirectory } from '../core';
+import fp from 'fastify-plugin';
 
-export default async function fastifyDocItUp(fastify: FastifyInstance, options: { docsDir?: string }) {
+const fastifyDocItUp = async (fastify: FastifyInstance, options: { docsDir?: string }) => {
   if (options.docsDir) initDocsDirectory(options.docsDir);
   else initDocsDirectory();
 
@@ -14,7 +15,6 @@ export default async function fastifyDocItUp(fastify: FastifyInstance, options: 
         if (typeof payload === 'string') parsedBody = JSON.parse(payload);
       } catch { }
 
-      // Fastify includes query string in url property
       const pathOnly = request.url.split('?')[0];
 
       DocItUpCore.recordRequest({
@@ -24,7 +24,7 @@ export default async function fastifyDocItUp(fastify: FastifyInstance, options: 
         query: request.query as Record<string, any>,
         body: request.body,
         params: request.params as Record<string, any>,
-        files: (request as any).files // support fastify-multipart
+        files: (request as any).files 
       }, {
         statusCode: reply.statusCode,
         headers: reply.getHeaders(),
@@ -43,4 +43,9 @@ export default async function fastifyDocItUp(fastify: FastifyInstance, options: 
     await DocItUpCore.loadSpecs();
     reply.send(DocItUpCore.getSwaggerSpec());
   });
-}
+};
+
+
+export default fp(fastifyDocItUp, {
+  name: 'doc-it-up'
+});
