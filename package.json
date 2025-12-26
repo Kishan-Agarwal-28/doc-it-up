@@ -1,7 +1,8 @@
 {
   "name": "doc-it-up",
-  "version": "1.0.0",
-  "description": "Generates automatic documentation for your code. So you don't have to.",
+  "version": "2.0.0",
+  "description": "Generates automatic documentation for your code. Supports Express, Fastify, Koa, Hono, Elysia, and Hapi.",
+  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -9,42 +10,138 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.js"
+    },
+    "./express": {
+      "types": "./dist/adapters/express.d.ts",
+      "import": "./dist/adapters/express.js",
+      "require": "./dist/adapters/express.js"
+    },
+    "./fastify": {
+      "types": "./dist/adapters/fastify.d.ts",
+      "import": "./dist/adapters/fastify.js",
+      "require": "./dist/adapters/fastify.js"
+    },
+    "./koa": {
+      "types": "./dist/adapters/koa.d.ts",
+      "import": "./dist/adapters/koa.js",
+      "require": "./dist/adapters/koa.js"
+    },
+    "./hono": {
+      "types": "./dist/adapters/hono.d.ts",
+      "import": "./dist/adapters/hono.js",
+      "require": "./dist/adapters/hono.js"
+    },
+    "./elysia": {
+      "types": "./dist/adapters/elysia.d.ts",
+      "import": "./dist/adapters/elysia.js",
+      "require": "./dist/adapters/elysia.js"
+    },
+    "./hapi": {
+      "types": "./dist/adapters/hapi.d.ts",
+      "import": "./dist/adapters/hapi.js",
+      "require": "./dist/adapters/hapi.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js",
+      "require": "./dist/core.js"
     }
   },
-  "engines": {
-    "node": ">=16.0.0"
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/index.d.ts"
+      ],
+      "express": [
+        "./dist/adapters/express.d.ts"
+      ],
+      "fastify": [
+        "./dist/adapters/fastify.d.ts"
+      ],
+      "koa": [
+        "./dist/adapters/koa.d.ts"
+      ],
+      "hono": [
+        "./dist/adapters/hono.d.ts"
+      ],
+      "elysia": [
+        "./dist/adapters/elysia.d.ts"
+      ],
+      "hapi": [
+        "./dist/adapters/hapi.d.ts"
+      ],
+      "core": [
+        "./dist/core.d.ts"
+      ]
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Kishan-Agarwal-28/doc-it-up"
-  },
-  "bugs": {
-    "url": "https://github.com/Kishan-Agarwal-28/issues"
-  },
-  "homepage": "https://github.com/Kishan-Agarwal-28/doc-it-up",
-  
-  "keywords": [
-    "api-documentation", "swagger-generator", "openapi-generator", 
-    "express-documentation", "fastify-docs", "nextjs-api-docs",
-    "automatic-documentation", "zero-config-docs", "api-docs-generator",
-    "swagger-ui", "postman-alternative", "api-testing", "rest-api-docs",
-    "typescript-api-docs", "nodejs-documentation", "developer-tools",
-    "api-explorer", "documentation-generator", "api-spec"
-  ],
   "scripts": {
     "build": "rollup -c"
   },
+  "peerDependencies": {
+    "elysia": "^1.0.0",
+    "express": "^4.0.0 || ^5.0.0",
+    "fastify": "^4.0.0 || ^5.0.0",
+    "hono": "^4.0.0",
+    "koa": "^2.0.0 || ^3.0.0",
+    "@hapi/hapi": "^20.0.0 || ^21.0.0"
+  },
+  "peerDependenciesMeta": {
+    "elysia": {
+      "optional": true
+    },
+    "express": {
+      "optional": true
+    },
+    "fastify": {
+      "optional": true
+    },
+    "hono": {
+      "optional": true
+    },
+    "koa": {
+      "optional": true
+    },
+    "@hapi/hapi": {
+      "optional": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kishan-Agarwal-28/doc-it-up.git"
+  },
+  "keywords": [
+    "api-documentation",
+    "swagger-generator",
+    "openapi-generator",
+    "express-documentation",
+    "fastify-docs",
+    "koa-docs",
+    "hono-docs",
+    "elysia-docs",
+    "automatic-documentation",
+    "zero-config-docs"
+  ],
   "author": "Kishan Agarwal",
   "license": "MIT",
-  "type": "module",
   "devDependencies": {
+    "@hapi/hapi": "^21.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
     "@types/express": "^5.0.3",
+    "@types/koa": "^3.0.1",
     "@types/multer": "^2.0.0",
     "@types/node": "^24.0.10",
+    "elysia": "^1.4.19",
+    "fastify": "^5.6.2",
+    "hono": "^4.11.3",
+    "koa": "^3.1.1",
     "rollup": "^4.44.1",
     "tslib": "^2.8.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
